@@ -9,8 +9,7 @@
     curl_setopt_array($ch,[
         CURLOPT_URL => "https://api.github.com/user/starred/httpie/httpie",
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER => $headers,
-        CURLOPT_CUSTOMREQUEST => "PUT"
+        CURLOPT_HTTPHEADER => $headers
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
     //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
