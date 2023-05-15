@@ -6,10 +6,17 @@
         "USER-Agent:MohitAgrawal668"
     ];
 
+    $payload=json_encode([
+        "name" => "Created from API",
+        "description" => "An example of api"
+    ]);
+
     curl_setopt_array($ch,[
-        CURLOPT_URL => "https://api.github.com/user/starred/httpie/httpie",
+        CURLOPT_URL => "https://api.github.com/user/repos",
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER => $headers
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => $payload   
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
     //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
