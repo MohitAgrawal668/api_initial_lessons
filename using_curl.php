@@ -8,7 +8,8 @@
     curl_setopt_array($ch,[
         CURLOPT_URL => "https://api.unsplash.com/photos/random",
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER => $headers
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_HEADER => true
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
     //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
