@@ -2,32 +2,21 @@
     $ch = curl_init();
 
     $headers=[
-        "Authorization: token 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",
         "USER-Agent:MohitAgrawal668"
     ];
 
-    $payload=json_encode([
-        "name" => "Created from API",
-        "description" => "An example of api"
-    ]);
-
+    
     curl_setopt_array($ch,[
-        CURLOPT_URL => "https://api.github.com/user/repos",
+        CURLOPT_URL => "https://api.github.com/gists",
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER => $headers,
-        //CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => $payload   
+        CURLOPT_HTTPHEADER => $headers
     ]);
-    //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
-    //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
     $response = curl_exec($ch);
 
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    
-    
     curl_close($ch);
-    echo $status_code."\n";
-    
-    echo $response."\n";
+    $data = json_decode($response, true);
+    foreach($data as $gist)
+        {
+            echo $gist['id']."-".$gist['description']."\n";
+        }
 ?>
