@@ -1,8 +1,14 @@
 <?php
     $ch = curl_init();
+
+    $headers=[
+        "Authorization: Client-ID yl7PdgAl3J9f3_4y8PhWdsW41UteDkvt0Jd4Hpve9HY"
+    ];
+
     curl_setopt_array($ch,[
-        CURLOPT_URL => "https://api.openweathermap.org/data/2.5/weather?q=India&appid=b62ed958cae09cd1e2b073c9ec350433",
-        CURLOPT_RETURNTRANSFER => true
+        CURLOPT_URL => "https://api.unsplash.com/photos/random",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => $headers
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
     //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
