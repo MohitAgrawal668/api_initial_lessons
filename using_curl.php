@@ -7,7 +7,7 @@
 
     
     curl_setopt_array($ch,[
-        CURLOPT_URL => "https://api.github.com/gists",
+        CURLOPT_URL => "https://api.github.com/gists/33313cbe4d46b5f928cd7b554521c279",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => $headers
     ]);
@@ -15,8 +15,5 @@
 
     curl_close($ch);
     $data = json_decode($response, true);
-    foreach($data as $gist)
-        {
-            echo $gist['id']."-".$gist['description']."\n";
-        }
+    print_r($data);
 ?>
