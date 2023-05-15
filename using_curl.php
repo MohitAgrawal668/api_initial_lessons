@@ -15,7 +15,8 @@
         CURLOPT_URL => "https://api.github.com/user/repos",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => $headers,
-        CURLOPT_CUSTOMREQUEST => "POST",
+        //CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POST => true,
         CURLOPT_POSTFIELDS => $payload   
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
