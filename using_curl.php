@@ -10,7 +10,7 @@
         CURLOPT_URL => "https://api.github.com/user/starred/httpie/httpie",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => $headers,
-    
+        CURLOPT_CUSTOMREQUEST => "PUT"
     ]);
     //curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
     //curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
